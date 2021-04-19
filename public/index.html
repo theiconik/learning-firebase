@@ -6,13 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Firebase</title>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body style="margin: 0; padding: 0; box-sizing: border-box">
+    <header>
+      <h3 style="text-align: center; font-weight: 500; padding: 5px 10px">
+        Learning Firebase
+      </h3>
+    </header>
+    <section id="whenSignedOut">
+      <button class="waves-effect waves-light btn" id="signInBtn" onclick="signIn()">
+        Sign In
+      </button>
+    </section>
+
+    <section id="whenSignedIn" hidden>
+      <div id="userDetails"></div>
+      <button class="waves-effect waves-light btn" id="signOutBtn" onClick="signOut()">
+        Sign Out
+      </button>
+    </section>
+    <script src="app.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
 
     <script>
       // Your web app's Firebase configuration
@@ -30,11 +59,5 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
-  </head>
-  <body>
-    <header>
-      <h4>Learning Firebase</h4>
-    </header>
-    <script src="app.js" defer></script>
   </body>
 </html>
